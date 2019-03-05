@@ -1,4 +1,3 @@
-
 from django.urls import path, include
 
 from . import views
@@ -6,9 +5,9 @@ from . import views
 app_name = 'crud'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('create/', views.create, name='create'),
-    path('delete/(?P<id>\d+)/', views.delete, name='delete'),
-    path('update/(?P<id>\d+)/', views.update, name='update'),
-    path('detail/(?P<id>\d+)/', views.detail, name='detail'),
+    path('', views.CredentialList.as_view(), name='index'),
+    path('create/', views.CredentialCreate.as_view(), name='create'),
+    path('delete/<int:pk>/', views.CredentialDelete.as_view(), name='delete'),
+    path('update/<int:pk>/', views.CredentialUpdate.as_view(), name='update'),
+    path('detail/<int:pk>/', views.CredentialDetail.as_view(), name='detail'),
 ]
