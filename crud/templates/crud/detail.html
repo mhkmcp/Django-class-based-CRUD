@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <h1>Detail</h1>
+        <h3>{{user.name}}</h3>
+        <h5>Handle: <strong>{{user.username}}</strong></h5>
+        <p><strong>Email: {{user.email}}</strong></p>
+        <a class="btn btn-success"
+            href="{% url 'crud:update' user.id %}"
+            >Update</a>
+
+        <a class="btn btn-danger"
+            href="{% url 'crud:delete' user.id %}"
+            >Delete</a>
+    </div>
+{% endblock %}
